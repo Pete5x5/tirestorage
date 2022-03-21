@@ -102,6 +102,9 @@
   margin-top: var(--dl-space-space-halfunit);
   text-align: center;
 }
+.footCopy {
+  margin: auto;
+}
 .heading {
   font-size: 32px;
   font-family: Inter;
@@ -121,6 +124,9 @@
 @media(max-width: 991px) {
   .headerEmail {
     display: none;
+  }
+  .footCopy {
+    font-size: xx-small;
   }
 }
 @media(max-width: 767px) {
