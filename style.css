@@ -104,7 +104,10 @@
 }
 .footCopy {
   margin: auto;
+  font-size: xx-small;
 }
+
+
 .heading {
   font-size: 32px;
   font-family: Inter;
@@ -125,16 +128,16 @@
   .headerEmail {
     display: none;
   }
-  .footCopy {
-    font-size: xx-small;
-  }
 }
 @media(max-width: 767px) {
   .headerPhone {
-    font-size: smaller;
+    display: none;
   }
   .logo1 {
     width: var(--dl-size-size-xlarge);
+  }
+  .icon1 {
+    width: var(--dl-size-size-small);
   }
   .iconTitle {
     text-align: center;

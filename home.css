@@ -70,31 +70,83 @@
   padding-bottom: var(--dl-space-space-twounits);
   justify-content: space-between;
 }
-.home-container1 {
+.home-container01 {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
   flex-direction: row;
 }
-.home-text {
-  align-self: center;
-  margin-left: auto;
-  margin-right: 30px;
-}
 .home-link {
   width: var(--dl-size-size-xlarge);
   text-align: right;
+  margin-left: auto;
   margin-right: 30px;
   text-decoration: none;
 }
-.home-btn-group {
+.home-text01 {
+  align-self: center;
+  margin-left: 0px;
+  margin-right: 30px;
+}
+.home-container02 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+}
+.home-container03 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  grid-auto-flow: 100px;
+  justify-content: center;
 }
 .home-link1 {
-  text-decoration: none;
+  margin-left: auto;
+}
+.home-text03 {
+  display: none;
+  align-self: center;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-container04 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+}
+.home-container05 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+}
+.home-container06 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+}
+.home-container07 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
 }
 .home-burger-menu {
   display: none;
@@ -122,7 +174,7 @@
   align-items: flex-start;
   flex-direction: column;
 }
-.home-container2 {
+.home-container08 {
   width: 100%;
   display: flex;
   align-items: center;
@@ -171,7 +223,7 @@
   justify-content: center;
   background-image: url("public/playground_assets/tires2-1500w.jpg");
 }
-.home-text03 {
+.home-text05 {
   color: #ffffff;
   font-size: 3rem;
   align-self: center;
@@ -229,22 +281,45 @@
   border-bottom-width: 0px;
 }
 .home-image2 {
-  height: 2rem;
-  object-fit: cover;
+  height: 3em;
+  margin: auto;
+  object-fit: contain;
 }
-.home-contact {
+.home-container09 {
+  flex: 0 0 auto;
+  width: 408px;
+  height: auto;
+  margin: auto;
   display: flex;
-  align-items: flex-start;
+  align-items: space-between;
   flex-direction: column;
-  justify-content: flex-start;
+}
+.home-container10 {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
 }
 .home-text14 {
   margin: auto;
   text-align: center;
 }
 @media(max-width: 991px) {
-  .home-icon {
-    display: flex;
+  .home-text01 {
+    margin-left: auto;
+  }
+  .home-container03 {
+    height: auto;
+    align-items: center;
+  }
+  .home-text03 {
+    margin-right: auto;
+  }
+  .home-image2 {
+    margin: auto;
   }
 }
 @media(max-width: 767px) {
@@ -252,8 +327,11 @@
     padding-left: var(--dl-space-space-twounits);
     padding-right: var(--dl-space-space-twounits);
   }
-  .home-btn-group {
-    display: none;
+  .home-image {
+    margin-right: auto;
+  }
+  .home-text03 {
+    display: flex;
   }
   .home-burger-menu {
     display: flex;
@@ -265,6 +343,7 @@
     padding-right: var(--dl-space-space-twounits);
   }
   .home-stats {
+    width: 100%;
     padding-left: var(--dl-space-space-twounits);
     padding-right: var(--dl-space-space-twounits);
   }
@@ -284,6 +363,23 @@
     padding-left: var(--dl-space-space-twounits);
     padding-right: var(--dl-space-space-twounits);
   }
+  .home-image2 {
+    width: var(--dl-size-size-xlarge);
+    height: auto;
+  }
+  .home-container09 {
+    width: auto;
+  }
+  .home-container10 {
+    margin: auto;
+    align-items: center;
+  }
+  .home-text14 {
+    flex-direction: column;
+  }
+  .home-text17 {
+    flex-direction: column;
+  }
 }
 @media(max-width: 479px) {
   .home-header {
@@ -298,6 +394,9 @@
     padding-right: var(--dl-space-space-unit);
     padding-bottom: var(--dl-space-space-threeunits);
   }
+  .home-text05 {
+    font-size: 32px;
+  }
   .home-stats {
     align-items: center;
     padding-top: var(--dl-space-space-twounits);
@@ -311,10 +410,6 @@
     flex-direction: column;
   }
   .home-image2 {
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .home-contact {
-    align-items: flex-start;
     margin-bottom: var(--dl-space-space-unit);
   }
 }
