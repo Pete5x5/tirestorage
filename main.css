@@ -1,0 +1,162 @@
+/* vvv GLOBAL VARIABLES vvv */
+:root {
+  --bg-color: #ffffff;
+  --bg-secondary-color: #f3f3f6;
+  --color-primary: #14854f;
+  --color-lightGrey: #d2d6dd;
+  --color-grey: #747681;
+  --color-darkGrey: #3f4144;
+  --color-error: #d43939;
+  --color-success: #28bd14;
+  --grid-maxWidth: 120rem;
+  --grid-gutter: 2rem;
+  --font-size: 1.8rem;
+  --font-color: #333333;
+  --font-family-sans: "Inter", sans-serif;
+  --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+}
+/* ^^^ GLOBAL VARIABLES ^^^ */
+
+/* vvv GLOBAL STYLES vvv */
+.m-a {
+  margin: auto;
+}
+
+.my-a {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mx-a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mx-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+/* ^^^ GLOBAL STYLES ^^^ */
+
+.home-header {
+  margin-top: 10px;
+  min-height: 80px;
+  max-height: 100px;
+}
+
+.last-header {
+  margin-right: 24px;
+}
+
+.first-header {
+  max-height: inherit;
+}
+
+.first-header img {
+  width: auto;
+  max-width: 300px;
+  max-height: 100%;
+  padding: 10px;
+}
+
+
+/* vvv Theme Switcher vvv */
+.theme-switcher {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  background-color: inherit;
+  transform-origin: right center;
+  transition-duration: 0.5s;
+  /* padding-left: 0; */
+}
+.h-8 {
+  height: 3rem;
+}
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+/* ^^^ Theme Switcher ^^^ */
+
+
+/* vvv MEDIA QUERIES vvv */
+@media(max-width: 991px) {
+    .headerEmail {
+      display: none !important;
+    }
+    a .logo1 {
+        max-width: 250px;
+      }
+  }
+  @media(max-width: 767px) {
+    .headerPhone {
+      display: none !important;
+    }
+    .logo1 {
+      max-width: 220px;
+    }
+    /* .icon1 {
+      width: var(--dl-size-size-small);
+    }
+    .iconTitle {
+      text-align: center;
+    } */
+  }
+/* ^^^ MEDIA QUERIES ^^^ */

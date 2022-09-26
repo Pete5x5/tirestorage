@@ -14,32 +14,36 @@
         font-size: 16px;
       }
   </style>
-    <link rel="stylesheet" href="./font.min.css" />
+    <link rel="stylesheet" href="./font.css" />
     <link rel="stylesheet" href="./chota.min.css" />
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <nav data-role="Header" class="home-header nav m-a">
-      <div class="nav-left m-a first-header">
-        <a class="brand" href="/">
-          <img
-          alt="tire storage space logo"
-          src="public/tss-logo.svg"
-          class="logo1"
-          />
-        </a>
+    <header data-role="Header" class="home-header row">
+      <div class="col-3 is-left">
+        <img
+        alt="image"
+        src="public/playground_assets/logo2-1500h.png"
+        class="logo1 home-image"
+      />
       </div>
-      <div class="nav-right navbar">
+      <div class="col">
+      </div>
+      <div class="col-2 is-center text-center my-a">
         <a
         href="mailto:info@tirestorage.space?subject="
         class="home-link headerEmail"
-        >
+      >
         <span>info@tirestorage.space</span>
-        </a>
-        <p class="my-a no-wrap headerPhone">
+      </a>
+      </div>
+      <div class="col-2 is-center text-center my-a">
+        <p class="home-text01 top1 headerPhone my-a">
           <span>(905) 520-2816</span>
         </p> 
-        <button id="theme-switcher" type="button" class="theme-switcher mx-0 my-a">
+      </div>
+      <div class="col is-left text-center my-a last-header">
+        <button id="theme-switcher" type="button" class="theme-switcher mx-0">
           <div id="icon-theme-light" class="">
             <svg viewBox="0 0 512 512" class="h-8" astro-icon="theme/light"><defs><linearGradient id="astroicon:theme/lighta" x1="149.99" x2="234.01" y1="119.24" y2="264.76" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="currentColor"></stop><stop offset=".45" stop-color="currentColor"></stop><stop offset="1" stop-color="currentColor"></stop></linearGradient><symbol id="astroicon:theme/lightb" viewBox="0 0 384 384"><circle cx="192" cy="192" r="84" fill="url(#astroicon:theme/lighta)" stroke="currentColor" stroke-miterlimit="10" stroke-width="6"></circle><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M192 61.66V12m0 360v-49.66m92.17-222.51 35.11-35.11M64.72 319.28l35.11-35.11m0-184.34L64.72 64.72m254.56 254.56-35.11-35.11M61.66 192H12m360 0h-49.66"><animateTransform additive="sum" attributeName="transform" dur="6s" repeatCount="indefinite" type="rotate" values="0 192 192; 45 192 192"></animateTransform></path></symbol></defs><use xlink:href="#astroicon:theme/lightb" width="384" height="384" transform="translate(64 64)"></use></svg>
             <span class="sr-only">Use light theme</span>
@@ -49,11 +53,9 @@
             <span class="sr-only">Use dark theme</span>
           </div>
         </button>
-        <div class="last-header my-a mx-0">
-          <a class="button primary mx-0 no-wrap">Dealer Login</a>
-        </div>
+        <a class="button primary">Dealer Login</a>
       </div>
-    </nav>
-    <hr>
+ 
+    </header>
   </body>
 </html>
