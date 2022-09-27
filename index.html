@@ -39,7 +39,7 @@
         <p class="my-a no-wrap headerPhone">
           <span>(905) 520-2816</span>
         </p> 
-        <button id="theme-switcher" type="button" class="theme-switcher mx-0 my-a">
+        <button id="theme-switcher" type="button" class="theme-switcher mx-0 my-a" title="Theme toggle" aria-label="auto" aria-live="polite">
           <div id="icon-theme-light" class="">
             <svg viewBox="0 0 512 512" class="h-8" astro-icon="theme/light"><defs><linearGradient id="astroicon:theme/lighta" x1="149.99" x2="234.01" y1="119.24" y2="264.76" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="currentColor"></stop><stop offset=".45" stop-color="currentColor"></stop><stop offset="1" stop-color="currentColor"></stop></linearGradient><symbol id="astroicon:theme/lightb" viewBox="0 0 384 384"><circle cx="192" cy="192" r="84" fill="url(#astroicon:theme/lighta)" stroke="currentColor" stroke-miterlimit="10" stroke-width="6"></circle><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M192 61.66V12m0 360v-49.66m92.17-222.51 35.11-35.11M64.72 319.28l35.11-35.11m0-184.34L64.72 64.72m254.56 254.56-35.11-35.11M61.66 192H12m360 0h-49.66"><animateTransform additive="sum" attributeName="transform" dur="6s" repeatCount="indefinite" type="rotate" values="0 192 192; 45 192 192"></animateTransform></path></symbol></defs><use xlink:href="#astroicon:theme/lightb" width="384" height="384" transform="translate(64 64)"></use></svg>
             <span class="sr-only">Use light theme</span>
@@ -49,6 +49,35 @@
             <span class="sr-only">Use dark theme</span>
           </div>
         </button>
+        <script>
+          const themes = ["light", "dark"];
+          const button = document.querySelector("#theme-switcher");
+    
+          const getThemeCurrent = () => document.documentElement.dataset.theme;
+          const getThemeNext = () => {
+            const themeCurrent = getThemeCurrent();
+            const indexThemeCurrent = themes.indexOf(themeCurrent);
+            return themes[(indexThemeCurrent + 1) % themes.length];
+          };
+    
+          const updateIcon = () => {
+            const themeCurrent = getThemeCurrent();
+            document
+              .querySelector(`#icon-theme-${themeCurrent}`)
+              .classList.add("hidden");
+            const themeNext = getThemeNext();
+            document
+              .querySelector(`#icon-theme-${themeNext}`)
+              .classList.remove("hidden");
+          };
+    
+          button.addEventListener("click", () => {
+            const themeNext = getThemeNext();
+            document.documentElement.dataset.theme = themeNext;
+            localStorage.setItem("theme", themeNext);
+            updateIcon();
+          });
+        </script>
         <div class="last-header my-a mx-0">
           <a class="button primary mx-0 no-wrap">Dealer Login</a>
         </div>

@@ -15,6 +15,18 @@
   --font-family-sans: "Inter", sans-serif;
   --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
 }
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --bg-secondary-color: #f3f3f6;
+    --font-color: #333333;
+}
+
+[data-theme="dark"] {
+    --bg-color: #222;
+    --bg-secondary-color: #404040;
+    --font-color: #eee;
+}
 /* ^^^ GLOBAL VARIABLES ^^^ */
 
 /* vvv GLOBAL STYLES vvv */
@@ -72,6 +84,10 @@
 
 /* ^^^ GLOBAL STYLES ^^^ */
 
+[data-theme="dark"] :is(.navbar, a, .h-8) {
+    color: var(--color-lightGrey)
+}
+
 .home-header {
   margin-top: 10px;
   min-height: 80px;
@@ -112,6 +128,9 @@
 .h-8 {
   height: 3rem;
 }
+/* [data-theme="dark"] .h-8 {
+    color: var(--color-lightGrey)
+} */
 .focus\:not-sr-only:focus {
   position: static;
   width: auto;
