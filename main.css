@@ -1,7 +1,5 @@
 /* vvv GLOBAL VARIABLES vvv */
 :root {
-  --bg-color: #ffffff;
-  --bg-secondary-color: #f3f3f6;
   --color-primary: #14854f;
   --color-lightGrey: #d2d6dd;
   --color-grey: #747681;
@@ -11,23 +9,54 @@
   --grid-maxWidth: 120rem;
   --grid-gutter: 2rem;
   --font-size: 1.8rem;
-  --font-color: #333333;
   --font-family-sans: "Inter", sans-serif;
   --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
 }
 
-[data-theme="light"] {
+:root, :root[data-force-color-mode="light"] {
     --bg-color: #ffffff;
     --bg-secondary-color: #f3f3f6;
     --font-color: #333333;
 }
 
-[data-theme="dark"] {
+:root[data-force-color-mode="dark"] {
     --bg-color: #222;
     --bg-secondary-color: #404040;
     --font-color: #eee;
 }
 /* ^^^ GLOBAL VARIABLES ^^^ */
+
+#reset-darkmode {
+	display: none;
+	text-decoration: none;
+	font-style: italic;
+}
+[data-force-color-mode] #reset-darkmode {
+	display: initial;
+}
+
+/* Visually hide the label text and Inject Light/Dark Mode Icon (based on checkbox value) */
+#toggle-darkmode {
+	display: none;
+}
+#toggle-darkmode + label > span {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+#toggle-darkmode + label:after {
+	font-size: 4em;
+	content: "🔆";
+	cursor: pointer;
+}
+#toggle-darkmode:checked + label:after {
+	content: "🌙";
+}
 
 /* vvv GLOBAL STYLES vvv */
 .m-a {
@@ -84,7 +113,7 @@
 
 /* ^^^ GLOBAL STYLES ^^^ */
 
-[data-theme="dark"] :is(.navbar, a, .h-8) {
+[data-force-color-mode="dark"] :is(.navbar, a, .h-8) {
     color: var(--color-lightGrey)
 }
 
@@ -128,7 +157,7 @@
 .h-8 {
   height: 3rem;
 }
-/* [data-theme="dark"] .h-8 {
+/* [data-force-color-mode="dark"] .h-8 {
     color: var(--color-lightGrey)
 } */
 .focus\:not-sr-only:focus {
