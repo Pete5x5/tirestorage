@@ -12,25 +12,38 @@
   --font-size: 1.8rem;
   --font-family-sans: "Inter", sans-serif;
   --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+  --logo-discount: #ff0000;
 }
 :root, :root[data-theme=light] {
   --bg-color: #fff;
   --bg-secondary-color: #f3f3f6;
   --font-color: #333;
+  --logo-title: #000;
+  --logo-odd: #000;
+  --logo-even: #555;
 }
 :root[data-theme=dark] {
   --bg-color: #222;
   --bg-secondary-color: #404040;
   --font-color: #eee;
+  --logo-title: #eee;
+  --logo-odd: #eee;
+  --logo-even: #999;
 }
 
-#reset-darkmode {
-  display: none;
-  text-decoration: none;
-  font-style: italic;
+.svgTire, .svgStorage, .svgSpace {
+  fill: var(--logo-title);
 }
-[data-theme] #reset-darkmode {
-  display: initial;
+
+.svgDisc {
+  fill: var(--logo-discount) !important;
+}
+
+.svgLogo1, .svgLogo3 {
+  fill: var(--logo-odd) !important;
+}
+.svgLogo2, .svgLogo4 {
+  fill: var(--logo-even) !important;
 }
 
 :where(html) {
