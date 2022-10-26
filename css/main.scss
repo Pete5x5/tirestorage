@@ -37,6 +37,15 @@
     --logo-even: #999;
   }
 }
+ body {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+ }
+// nav {
+//     flex-direction: row;
+// }
 // ^^^ GLOBAL VARIABLES ^^^ //
 // vvv LOGO vvv //
 .svgTire, .svgStorage, .svgSpace {
@@ -281,6 +290,39 @@ transform:translate(-7px)
     margin-left: 0px !important;
 }
 
+.homeSplash {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  background-image: url("../public/tires2-1500w.jpg");
+  background-clip: padding-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.splashText {
+  font-weight: bold;
+  color: white;
+  font-size: 5vw;
+}
+.topDivide {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+footer {
+    text-align: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 // vvv MEDIA QUERIES vvv //
 @media (max-width: 991px) {
   .headerEmail {
