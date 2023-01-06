@@ -5,48 +5,72 @@
 // @import url("../fontawesome/scss/solid.scss");
 // // vvv GLOBAL VARIABLES vvv //
 :root {
-  --color-primary: #14854f;
-  --color-lightGrey: #d2d6dd;
-  --color-grey: #747681;
-  --color-darkGrey: #3f4144;
-  --color-error: #d43939;
-  --color-success: #28bd14;
+  --background: hsl(231, 15%, 18%); /* dark */
+  --foreground: hsl(60, 30%, 96%); /* light */
+  --selection: 	hsl(232, 14%, 31%); /* dark-grey */
+  --selection-L: hsl(0, 0%, 53%); /* light-grey */
+  --comment: 	hsl(225, 27%, 51%); /* blue-grey*/
+
+  $theme-colors: (
+  "red": hsl(0, 75%, 50%),
+  "orange": hsl(31, 100%, 50%),
+  "green": hsl(135, 90%, 35%),
+  "purple": hsl(265, 89%, 65%),
+  "cyan": hsl(191, 97%, 55%),
+  "pink": hsl(326, 100%, 60%),
+  );
+
+  @each $name, $col in $theme-colors {
+    --#{$name}-hue: #{hue($col)};
+    --#{$name}-sat: #{saturation($col)};
+    --#{$name}-lig: #{lightness($col)};
+    --#{$name}:  #{$col};
+    --dark-#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),calc(var(--#{$name}-lig))-20%);
+    --light-#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),calc(var(--#{$name}-lig))+20%);
+    --transparent-#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),var(--#{$name}-lig)/0.5);
+    --soft-#{$name}: hsl(var(--#{$name}-hue),calc(var(--#{$name}-sat)-30%),calc(var(--#{$name}-lig))+10%);
+  }
+
+  --color-primary: var(--green);
+  --color-lightGrey: var(--comment);
+  --color-grey: var(--selection-L);
+  --color-darkGrey: var(--selection);
+  --color-error: var(--red);
+  --color-success: var(--green);
   --grid-maxWidth: 120rem;
   --grid-gutter: 2rem;
-  --font-size: 1.8rem;
+  --font-size: 1.6rem; /*Note: rem has been scaled down to 62.5%, therefore rem=px/10 (ex. 1.6rem=16px)*/
   --font-family-sans: "Inter", sans-serif;
   --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
-  --logo-discount: #ff0000;
-
+  --logo-discount: var(--red);
   &,
   &[data-theme="light"] {
-    --bg-color: #fff;
-    --bg-secondary-color: #f3f3f6;
-    --font-color: #333;
-    --logo-title: #000;
-    --logo-odd: #000;
-    --logo-even: #555;
+    --bg-color: var(--foreground);
+    --bg-secondary-color: var(--selection);
+    --font-color: var(--background);
+    --logo-title: var(--background);
+    --logo-odd: var(--background);
+    --logo-even: var(--selection);
   }
 
   &[data-theme="dark"] {
-    --bg-color: #222;
-    --bg-secondary-color: #404040;
-    --font-color: #eee;
-    --logo-title: #eee;
-    --logo-odd: #eee;
-    --logo-even: #999;
+    --bg-color: var(--background);
+    --bg-secondary-color: var(--selection);
+    --font-color: var(--foreground);
+    --logo-title: var(--foreground);
+    --logo-odd: var(--foreground);
+    --logo-even: var(--selection-L);
   }
 }
- body {
-    height: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    transition: background 1s;
- }
-// nav {
-//     flex-direction: row;
-// }
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 1s;
+}
+
 // ^^^ GLOBAL VARIABLES ^^^ //
 // vvv LOGO vvv //
 .svgTire, .svgStorage, .svgSpace {
@@ -174,8 +198,8 @@ transform:translate(-7px)
 }
 .theme-toggle {
     --size: 2rem;
-    --icon-fill: hsl(210 10% 30%);
-    --icon-fill-hover: hsl(210 10% 15%);
+    --icon-fill: var(--font-color);
+    --icon-fill-hover: var(--font-color);
     background:none;
     border:none;
     padding:0;
@@ -196,10 +220,10 @@ transform:translate(-7px)
     block-size:100%;
     stroke-linecap:round
    }
-   [data-theme=dark] .theme-toggle {
+/*    [data-theme=dark] .theme-toggle {
     --icon-fill: hsl(210 10% 70%);
     --icon-fill-hover: hsl(210 15% 90%) 
-   }
+   } */
    @media (hover: none) {
     .theme-toggle {
      --size: 48px 
@@ -262,33 +286,22 @@ transform:translate(-7px)
 
 // ^^^ GLOBAL STYLES ^^^ //
 
-[data-theme="dark"] :is(.navbar, a, .h-8) {
-  color: var(--color-lightGrey);
+.nav a {
+  color: var(--font-color);
 }
 
 .home-header {
   margin-top: 10px;
-  min-height: 80px;
-  max-height: 100px;
+  min-height: 8.0rem;
+  max-height: 10.0rem;
 }
 
 .last-header {
   margin-right: 24px;
 }
 
-.first-header {
-  max-height: inherit;
-}
-
-.first-header img {
-  width: auto;
-  max-width: 300px;
-  max-height: 100%;
-  padding: 10px;
-}
-
 .header-button {
-    margin-left: 0px !important;
+    margin-left: 0 !important;
 }
 
 .homeSplash {
@@ -320,9 +333,9 @@ footer {
     width: 100%;
     justify-content: center;
     flex-direction: column;
-    min-height: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    min-height: 5.0rem;
+    margin-top: 1.0rem;
+    margin-bottom: 1.0rem;
 }
 // vvv MEDIA QUERIES vvv //
 @media (max-width: 991px) {
@@ -340,11 +353,5 @@ footer {
   .logo1 {
     max-width: 220px;
   }
-  /* .icon1 {
-        width: var(--dl-size-size-small);
-      }
-      .iconTitle {
-        text-align: center;
-      } */
 }
 // ^^^ MEDIA QUERIES ^^^ //
