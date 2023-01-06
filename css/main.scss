@@ -24,7 +24,7 @@
     --#{$name}-hue: #{hue($col)};
     --#{$name}-sat: #{saturation($col)};
     --#{$name}-lig: #{lightness($col)};
-    --#{$name}:  #{$col};
+    --#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),calc(var(--#{$name}-lig)));
     --dark-#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),calc(var(--#{$name}-lig))-20%);
     --light-#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),calc(var(--#{$name}-lig))+20%);
     --transparent-#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),var(--#{$name}-lig)/0.5);

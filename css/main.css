@@ -7,7 +7,7 @@
   --red-hue: 0deg;
   --red-sat: 75%;
   --red-lig: 50%;
-  --red: hsl(0deg, 75%, 50%);
+  --red: hsl(var(--red-hue),var(--red-sat),calc(var(--red-lig)));
   --dark-red: hsl(var(--red-hue),var(--red-sat),calc(var(--red-lig))-20%);
   --light-red: hsl(var(--red-hue),var(--red-sat),calc(var(--red-lig))+20%);
   --transparent-red: hsl(var(--red-hue),var(--red-sat),var(--red-lig)/0.5);
@@ -15,7 +15,7 @@
   --orange-hue: 31deg;
   --orange-sat: 100%;
   --orange-lig: 50%;
-  --orange: hsl(31deg, 100%, 50%);
+  --orange: hsl(var(--orange-hue),var(--orange-sat),calc(var(--orange-lig)));
   --dark-orange: hsl(var(--orange-hue),var(--orange-sat),calc(var(--orange-lig))-20%);
   --light-orange: hsl(var(--orange-hue),var(--orange-sat),calc(var(--orange-lig))+20%);
   --transparent-orange: hsl(var(--orange-hue),var(--orange-sat),var(--orange-lig)/0.5);
@@ -23,7 +23,7 @@
   --green-hue: 135deg;
   --green-sat: 90%;
   --green-lig: 35%;
-  --green: hsl(135deg, 90%, 35%);
+  --green: hsl(var(--green-hue),var(--green-sat),calc(var(--green-lig)));
   --dark-green: hsl(var(--green-hue),var(--green-sat),calc(var(--green-lig))-20%);
   --light-green: hsl(var(--green-hue),var(--green-sat),calc(var(--green-lig))+20%);
   --transparent-green: hsl(var(--green-hue),var(--green-sat),var(--green-lig)/0.5);
@@ -31,7 +31,7 @@
   --purple-hue: 265deg;
   --purple-sat: 89%;
   --purple-lig: 65%;
-  --purple: hsl(265deg, 89%, 65%);
+  --purple: hsl(var(--purple-hue),var(--purple-sat),calc(var(--purple-lig)));
   --dark-purple: hsl(var(--purple-hue),var(--purple-sat),calc(var(--purple-lig))-20%);
   --light-purple: hsl(var(--purple-hue),var(--purple-sat),calc(var(--purple-lig))+20%);
   --transparent-purple: hsl(var(--purple-hue),var(--purple-sat),var(--purple-lig)/0.5);
@@ -39,7 +39,7 @@
   --cyan-hue: 191deg;
   --cyan-sat: 97%;
   --cyan-lig: 55%;
-  --cyan: hsl(191deg, 97%, 55%);
+  --cyan: hsl(var(--cyan-hue),var(--cyan-sat),calc(var(--cyan-lig)));
   --dark-cyan: hsl(var(--cyan-hue),var(--cyan-sat),calc(var(--cyan-lig))-20%);
   --light-cyan: hsl(var(--cyan-hue),var(--cyan-sat),calc(var(--cyan-lig))+20%);
   --transparent-cyan: hsl(var(--cyan-hue),var(--cyan-sat),var(--cyan-lig)/0.5);
@@ -47,7 +47,7 @@
   --pink-hue: 326deg;
   --pink-sat: 100%;
   --pink-lig: 60%;
-  --pink: hsl(326deg, 100%, 60%);
+  --pink: hsl(var(--pink-hue),var(--pink-sat),calc(var(--pink-lig)));
   --dark-pink: hsl(var(--pink-hue),var(--pink-sat),calc(var(--pink-lig))-20%);
   --light-pink: hsl(var(--pink-hue),var(--pink-sat),calc(var(--pink-lig))+20%);
   --transparent-pink: hsl(var(--pink-hue),var(--pink-sat),var(--pink-lig)/0.5);
