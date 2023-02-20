@@ -1,0 +1,73 @@
+.login {
+  margin-top: 10vh;
+  border: 2px solid var(--outline0);
+  background-color: var(--bg-secondary-color);
+  padding: 20px;
+  padding-bottom: 0;
+  width: 90vw;
+  max-width: 50rem;
+}
+.login button {
+  margin-top: 2rem;
+  margin-left: -20px;
+  margin-bottom: -10px;
+  align-items: center;
+  width: calc(100% + 40px);
+  padding: 30px;
+  border-top: 2px solid var(--outline0);
+  font-size: 2rem;
+  font-weight: bold;
+}
+.login, .login button {
+  align-self: center;
+}
+.login h1 {
+  font-size: 4rem;
+  text-align: center;
+  padding-bottom: 1.2rem;
+}
+
+.loginTitle {
+  margin-bottom: 3rem;
+  margin-top: -10px;
+  color: var(--text-color);
+  border-color: var(--text-color);
+  border-width: 0;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+}
+
+.login [class*=icon-] {
+  color: var(--gray1);
+  font-size: 2.4rem;
+  padding: 1.8rem;
+  line-height: 4rem;
+  background-color: var(--color-primary);
+  border: 0.666667px solid var(--outline2);
+}
+
+.loginRow {
+  margin-bottom: 14px;
+}
+
+#uid, #pwd {
+  margin-left: -1.6rem;
+  border-color: var(--outline2);
+  border-radius: 0;
+  background-color: var(--gray1);
+  height: 6rem;
+}
+
+*::placeholder {
+  color: var(--gray-5);
+}
+
+.error {
+  text-align: center;
+  background-color: var(--color-error);
+  font-size: 1.8rem;
+  padding: 2rem;
+  color: var(--gray1);
+}
+
+/*# sourceMappingURL=back.css.map */

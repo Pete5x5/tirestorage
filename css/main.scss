@@ -1,67 +1,432 @@
-
-// // importing core styling file
-// @import url("../fontawesome/scss/fontawesome.scss");
-// // our project needs Solid + Brands
-// @import url("../fontawesome/scss/solid.scss");
-// // vvv GLOBAL VARIABLES vvv //
 :root {
-  --background: hsl(231, 15%, 18%); /* dark */
-  --foreground: hsl(60, 30%, 96%); /* light */
-  --selection: 	hsl(232, 14%, 31%); /* dark-grey */
-  --selection-L: hsl(0, 0%, 53%); /* light-grey */
-  --comment: 	hsl(225, 27%, 51%); /* blue-grey*/
+  --slate-50: hsl(210, 40%, 98%);
+  --slate-100: hsl(210, 40%, 96%);
+  --slate-200: hsl(214, 32%, 91%);
+  --slate-300: hsl(213, 27%, 84%);
+  --slate-400: hsl(215, 20%, 65%);
+  --slate-500: hsl(215, 16%, 47%);
+  --slate-600: hsl(215, 19%, 35%);
+  --slate-700: hsl(215, 25%, 27%);
+  --slate-800: hsl(217, 33%, 17%);
+  --slate-900: hsl(222, 47%, 11%);
+  --gray-50: hsl(210, 20%, 98%);
+  --gray-100: hsl(220, 14%, 96%);
+  --gray-200: hsl(220, 13%, 91%);
+  --gray-300: hsl(216, 12%, 84%);
+  --gray-400: hsl(218, 11%, 65%);
+  --gray-500: hsl(220, 9%, 46%);
+  --gray-600: hsl(215, 14%, 34%);
+  --gray-700: hsl(217, 19%, 27%);
+  --gray-800: hsl(215, 28%, 17%);
+  --gray-900: hsl(221, 39%, 11%);
+  --zinc-50: hsl(0, 0%, 98%);
+  --zinc-100: hsl(240, 5%, 96%);
+  --zinc-200: hsl(240, 6%, 90%);
+  --zinc-300: hsl(240, 5%, 84%);
+  --zinc-400: hsl(240, 5%, 65%);
+  --zinc-500: hsl(240, 4%, 46%);
+  --zinc-600: hsl(240, 5%, 34%);
+  --zinc-700: hsl(240, 5%, 26%);
+  --zinc-800: hsl(240, 4%, 16%);
+  --zinc-900: hsl(240, 6%, 10%);
+  --neutral-50: hsl(0, 0%, 98%);
+  --neutral-100: hsl(0, 0%, 96%);
+  --neutral-200: hsl(0, 0%, 90%);
+  --neutral-300: hsl(0, 0%, 83%);
+  --neutral-400: hsl(0, 0%, 64%);
+  --neutral-500: hsl(0, 0%, 45%);
+  --neutral-600: hsl(0, 0%, 32%);
+  --neutral-700: hsl(0, 0%, 25%);
+  --neutral-800: hsl(0, 0%, 15%);
+  --neutral-900: hsl(0, 0%, 9%);
+  --stone-50: hsl(60, 9%, 98%);
+  --stone-100: hsl(60, 5%, 96%);
+  --stone-200: hsl(20, 6%, 90%);
+  --stone-300: hsl(24, 6%, 83%);
+  --stone-400: hsl(24, 5%, 64%);
+  --stone-500: hsl(25, 5%, 45%);
+  --stone-600: hsl(33, 5%, 32%);
+  --stone-700: hsl(30, 6%, 25%);
+  --stone-800: hsl(12, 6%, 15%);
+  --stone-900: hsl(24, 10%, 10%);
+  --red-50: hsl(0, 86%, 97%);
+  --red-100: hsl(0, 93%, 94%);
+  --red-200: hsl(0, 96%, 89%);
+  --red-300: hsl(0, 94%, 82%);
+  --red-400: hsl(0, 91%, 71%);
+  --red-500: hsl(0, 84%, 60%);
+  --red-600: hsl(0, 72%, 51%);
+  --red-700: hsl(0, 74%, 42%);
+  --red-800: hsl(0, 70%, 35%);
+  --red-900: hsl(0, 63%, 31%);
+  --orange-50: hsl(33, 100%, 96%);
+  --orange-100: hsl(34, 100%, 92%);
+  --orange-200: hsl(32, 98%, 83%);
+  --orange-300: hsl(31, 97%, 72%);
+  --orange-400: hsl(27, 96%, 61%);
+  --orange-500: hsl(25, 95%, 53%);
+  --orange-600: hsl(21, 90%, 48%);
+  --orange-700: hsl(17, 88%, 40%);
+  --orange-800: hsl(15, 79%, 34%);
+  --orange-900: hsl(15, 75%, 28%);
+  --amber-50: hsl(48, 100%, 96%);
+  --amber-100: hsl(48, 96%, 89%);
+  --amber-200: hsl(48, 97%, 77%);
+  --amber-300: hsl(46, 97%, 65%);
+  --amber-400: hsl(43, 96%, 56%);
+  --amber-500: hsl(38, 92%, 50%);
+  --amber-600: hsl(32, 95%, 44%);
+  --amber-700: hsl(26, 90%, 37%);
+  --amber-800: hsl(23, 83%, 31%);
+  --amber-900: hsl(22, 78%, 26%);
+  --yellow-50: hsl(55, 92%, 95%);
+  --yellow-100: hsl(55, 97%, 88%);
+  --yellow-200: hsl(53, 98%, 77%);
+  --yellow-300: hsl(50, 98%, 64%);
+  --yellow-400: hsl(48, 96%, 53%);
+  --yellow-500: hsl(45, 93%, 47%);
+  --yellow-600: hsl(41, 96%, 40%);
+  --yellow-700: hsl(35, 92%, 33%);
+  --yellow-800: hsl(32, 81%, 29%);
+  --yellow-900: hsl(28, 73%, 26%);
+  --lime-50: hsl(78, 92%, 95%);
+  --lime-100: hsl(80, 89%, 89%);
+  --lime-200: hsl(81, 88%, 80%);
+  --lime-300: hsl(82, 85%, 67%);
+  --lime-400: hsl(83, 78%, 55%);
+  --lime-500: hsl(84, 81%, 44%);
+  --lime-600: hsl(85, 85%, 35%);
+  --lime-700: hsl(86, 78%, 27%);
+  --lime-800: hsl(86, 69%, 23%);
+  --lime-900: hsl(88, 61%, 20%);
+  --green-50: hsl(138, 76%, 97%);
+  --green-100: hsl(141, 84%, 93%);
+  --green-200: hsl(141, 79%, 85%);
+  --green-300: hsl(142, 77%, 73%);
+  --green-400: hsl(142, 69%, 58%);
+  --green-500: hsl(142, 71%, 45%);
+  --green-600: hsl(142, 76%, 36%);
+  --green-700: hsl(142, 72%, 29%);
+  --green-800: hsl(143, 64%, 24%);
+  --green-900: hsl(144, 61%, 20%);
+  --emerald-50: hsl(152, 81%, 96%);
+  --emerald-100: hsl(149, 80%, 90%);
+  --emerald-200: hsl(152, 76%, 80%);
+  --emerald-300: hsl(156, 72%, 67%);
+  --emerald-400: hsl(158, 64%, 52%);
+  --emerald-500: hsl(160, 84%, 39%);
+  --emerald-600: hsl(161, 94%, 30%);
+  --emerald-700: hsl(163, 94%, 24%);
+  --emerald-800: hsl(163, 88%, 20%);
+  --emerald-900: hsl(164, 86%, 16%);
+  --teal-50: hsl(166, 76%, 97%);
+  --teal-100: hsl(167, 85%, 89%);
+  --teal-200: hsl(168, 84%, 78%);
+  --teal-300: hsl(171, 77%, 64%);
+  --teal-400: hsl(172, 66%, 50%);
+  --teal-500: hsl(173, 80%, 40%);
+  --teal-600: hsl(175, 84%, 32%);
+  --teal-700: hsl(175, 77%, 26%);
+  --teal-800: hsl(176, 69%, 22%);
+  --teal-900: hsl(176, 61%, 19%);
+  --cyan-50: hsl(183, 100%, 96%);
+  --cyan-100: hsl(185, 96%, 90%);
+  --cyan-200: hsl(186, 94%, 82%);
+  --cyan-300: hsl(187, 92%, 69%);
+  --cyan-400: hsl(188, 86%, 53%);
+  --cyan-500: hsl(189, 94%, 43%);
+  --cyan-600: hsl(192, 91%, 36%);
+  --cyan-700: hsl(193, 82%, 31%);
+  --cyan-800: hsl(194, 70%, 27%);
+  --cyan-900: hsl(196, 64%, 24%);
+  --sky-50: hsl(204, 100%, 97%);
+  --sky-100: hsl(204, 94%, 94%);
+  --sky-200: hsl(201, 94%, 86%);
+  --sky-300: hsl(199, 95%, 74%);
+  --sky-400: hsl(198, 93%, 60%);
+  --sky-500: hsl(199, 89%, 48%);
+  --sky-600: hsl(200, 98%, 39%);
+  --sky-700: hsl(201, 96%, 32%);
+  --sky-800: hsl(201, 90%, 27%);
+  --sky-900: hsl(202, 80%, 24%);
+  --blue-50: hsl(214, 100%, 97%);
+  --blue-100: hsl(214, 95%, 93%);
+  --blue-200: hsl(213, 97%, 87%);
+  --blue-300: hsl(212, 96%, 78%);
+  --blue-400: hsl(213, 94%, 68%);
+  --blue-500: hsl(217, 91%, 60%);
+  --blue-600: hsl(221, 83%, 53%);
+  --blue-700: hsl(224, 76%, 48%);
+  --blue-800: hsl(226, 71%, 40%);
+  --blue-900: hsl(224, 64%, 33%);
+  --indigo-50: hsl(226, 100%, 97%);
+  --indigo-100: hsl(226, 100%, 94%);
+  --indigo-200: hsl(228, 96%, 89%);
+  --indigo-300: hsl(230, 94%, 82%);
+  --indigo-400: hsl(234, 89%, 74%);
+  --indigo-500: hsl(239, 84%, 67%);
+  --indigo-600: hsl(243, 75%, 59%);
+  --indigo-700: hsl(245, 58%, 51%);
+  --indigo-800: hsl(244, 55%, 41%);
+  --indigo-900: hsl(242, 47%, 34%);
+  --violet-50: hsl(250, 100%, 98%);
+  --violet-100: hsl(251, 91%, 95%);
+  --violet-200: hsl(251, 95%, 92%);
+  --violet-300: hsl(252, 95%, 85%);
+  --violet-400: hsl(255, 92%, 76%);
+  --violet-500: hsl(258, 90%, 66%);
+  --violet-600: hsl(262, 83%, 58%);
+  --violet-700: hsl(263, 70%, 50%);
+  --violet-800: hsl(263, 69%, 42%);
+  --violet-900: hsl(264, 67%, 35%);
+  --purple-50: hsl(270, 100%, 98%);
+  --purple-100: hsl(269, 100%, 95%);
+  --purple-200: hsl(269, 100%, 92%);
+  --purple-300: hsl(269, 97%, 85%);
+  --purple-400: hsl(270, 95%, 75%);
+  --purple-500: hsl(271, 91%, 65%);
+  --purple-600: hsl(271, 81%, 56%);
+  --purple-700: hsl(272, 72%, 47%);
+  --purple-800: hsl(273, 67%, 39%);
+  --purple-900: hsl(274, 66%, 32%);
+  --fuchsia-50: hsl(289, 100%, 98%);
+  --fuchsia-100: hsl(287, 100%, 95%);
+  --fuchsia-200: hsl(288, 96%, 91%);
+  --fuchsia-300: hsl(291, 93%, 83%);
+  --fuchsia-400: hsl(292, 91%, 73%);
+  --fuchsia-500: hsl(292, 84%, 61%);
+  --fuchsia-600: hsl(293, 69%, 49%);
+  --fuchsia-700: hsl(295, 72%, 40%);
+  --fuchsia-800: hsl(295, 70%, 33%);
+  --fuchsia-900: hsl(297, 64%, 28%);
+  --pink-50: hsl(327, 73%, 97%);
+  --pink-100: hsl(326, 78%, 95%);
+  --pink-200: hsl(326, 85%, 90%);
+  --pink-300: hsl(327, 87%, 82%);
+  --pink-400: hsl(329, 86%, 70%);
+  --pink-500: hsl(330, 81%, 60%);
+  --pink-600: hsl(333, 71%, 51%);
+  --pink-700: hsl(335, 78%, 42%);
+  --pink-800: hsl(336, 74%, 35%);
+  --pink-900: hsl(336, 69%, 30%);
+  --rose-50: hsl(356, 100%, 97%);
+  --rose-100: hsl(356, 100%, 95%);
+  --rose-200: hsl(353, 96%, 90%);
+  --rose-300: hsl(353, 96%, 82%);
+  --rose-400: hsl(351, 95%, 71%);
+  --rose-500: hsl(350, 89%, 60%);
+  --rose-600: hsl(347, 77%, 50%);
+  --rose-700: hsl(345, 83%, 41%);
+  --rose-800: hsl(343, 80%, 35%);
+  --rose-900: hsl(342, 75%, 30%);
 
-  $theme-colors: (
-  "red": hsl(0, 75%, 50%),
-  "orange": hsl(31, 100%, 50%),
-  "green": hsl(135, 90%, 35%),
-  "purple": hsl(265, 89%, 65%),
-  "cyan": hsl(191, 97%, 55%),
-  "pink": hsl(326, 100%, 60%),
-  );
+  $gray: neutral;
 
-  @each $name, $col in $theme-colors {
-    --#{$name}-hue: #{hue($col)};
-    --#{$name}-sat: #{saturation($col)};
-    --#{$name}-lig: #{lightness($col)};
-    --#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),calc(var(--#{$name}-lig)));
-    --dark-#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),calc(var(--#{$name}-lig))-20%);
-    --light-#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),calc(var(--#{$name}-lig))+20%);
-    --transparent-#{$name}: hsl(var(--#{$name}-hue),var(--#{$name}-sat),var(--#{$name}-lig)/0.5);
-    --soft-#{$name}: hsl(var(--#{$name}-hue),calc(var(--#{$name}-sat)-30%),calc(var(--#{$name}-lig))+10%);
-  }
+  --gray05: var(--#{$gray}-50);
+  --gray1: var(--#{$gray}-100);
+  --gray2: var(--#{$gray}-200);
+  --gray3: var(--#{$gray}-300);
+  --gray4: var(--#{$gray}-400);
+  --gray5: var(--#{$gray}-500);
+  --gray6: var(--#{$gray}-600);
+  --gray7: var(--#{$gray}-700);
+  --gray8: var(--#{$gray}-800);
+  --gray9: var(--#{$gray}-900);
 
-  --color-primary: var(--green);
-  --color-lightGrey: var(--comment);
-  --color-grey: var(--selection-L);
-  --color-darkGrey: var(--selection);
-  --color-error: var(--red);
-  --color-success: var(--green);
+  --color-lightGrey: var(--gray4);
+  --color-grey: var(--gray6);
+  --color-darkGrey: var(--gray8);
+  --color-error: var(--red-700);
+  --color-success: var(--green-700);
+
   --grid-maxWidth: 120rem;
   --grid-gutter: 2rem;
-  --font-size: 1.6rem; /*Note: rem has been scaled down to 62.5%, therefore rem=px/10 (ex. 1.6rem=16px)*/
+  --font-size: 1.6rem; //Note: rem has been scaled down to 62.5%, therefore rem=px/10 (ex. 1.6rem=16px)
   --font-family-sans: "Inter", sans-serif;
   --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
-  --logo-discount: var(--red);
   &,
   &[data-theme="light"] {
-    --bg-color: var(--foreground);
-    --bg-secondary-color: var(--selection);
-    --font-color: var(--background);
-    --logo-title: var(--background);
-    --logo-odd: var(--background);
-    --logo-even: var(--selection);
+    --bg-color: var(--gray1);
+    --bg-secondary-color: var(--gray2);
+    --shadow-color: 220deg 5% 56%;
+    --font-color: var(--gray9);
+    --font-invert: var(--gray1);
+    --logo-title: var(--gray9);
+    --logo-odd: var(--gray9);
+    --logo-even: var(--gray7);
+    --logo-discount: var(--red-600);
+    --outline0: var(--gray5);
+    --outline1: var(--gray5);
+    --outline2: var(--gray7);
+    --color-primary: var(--blue-700);
+  }
+  &[data-theme="dark"] {
+    --bg-color: var(--gray9);
+    --bg-secondary-color: var(--gray8);
+    --shadow-color: 221deg 63% 2%;
+    // --shadow-color: 220deg 5% 26%;
+    --font-color: var(--gray1);
+    --font-invert: var(--gray9);
+    --logo-title: var(--gray1);
+    --logo-odd: var(--gray1);
+    --logo-even: var(--gray3);
+    --logo-discount: var(--rose-500);
+    --outline0: var(--gray4);
+    --outline1: var(--gray7);
+    --outline2: var(--gray6);
+    --color-primary: var(--blue-600);
   }
 
-  &[data-theme="dark"] {
-    --bg-color: var(--background);
-    --bg-secondary-color: var(--selection);
-    --font-color: var(--foreground);
-    --logo-title: var(--foreground);
-    --logo-odd: var(--foreground);
-    --logo-even: var(--selection-L);
-  }
+  --shadow1: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.48),
+    0.8px 1.5px 1.8px -1px hsl(var(--shadow-color) / 0.44),
+    2.1px 4.1px 4.8px -2px hsl(var(--shadow-color) / 0.4),
+    5.3px 10.5px 12.3px -3px hsl(var(--shadow-color) / 0.36);
 }
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?14eq91');
+  src:  url('fonts/icomoon.eot?14eq91#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?14eq91') format('truetype'),
+    url('fonts/icomoon.woff?14eq91') format('woff'),
+    url('fonts/icomoon.svg?14eq91#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-display: swap;
+src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+[class^="icon-"], [class*=" icon-"], .icon1 {
+  // /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  // /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-alert-circle:before {
+  content: "\e90b";
+}
+.icon-alert-triangle:before {
+  content: "\e90c";
+}
+.icon-check:before {
+  content: "\e900";
+}
+.icon-check-circle:before {
+  content: "\e901";
+}
+.icon-check-square:before {
+  content: "\e902";
+}
+.icon-lock:before {
+  content: "\e903";
+}
+.icon-moon:before {
+  content: "\e904";
+}
+.icon-sun:before {
+  content: "\e905";
+}
+.icon-sunrise:before {
+  content: "\e906";
+}
+.icon-sunset:before {
+  content: "\e907";
+}
+.icon-user:before {
+  content: "\e908";
+}
+.icon-x-circle:before {
+  content: "\e909";
+}
+.icon-x-square:before {
+  content: "\e90a";
+}
+
+
 
 body {
   height: 100%;
@@ -71,164 +436,109 @@ body {
   transition: background 1s;
 }
 
+*,
+button,
+.header-button,
+.button,
+input {
+  border-radius: 0;
+}
+
 // ^^^ GLOBAL VARIABLES ^^^ //
 // vvv LOGO vvv //
-.svgTire, .svgStorage, .svgSpace {
-    fill: var(--logo-title);
+.svgTire,
+.svgStorage,
+.svgSpace {
+  fill: var(--logo-title);
 }
 .svgDisc {
-    fill: var(--logo-discount) !important;
+  fill: var(--logo-discount);
 }
 .svgLogo {
-    &1,&3
-     {
-        fill: var(--logo-odd) !important;
-    }
-    &2,&4
-     {
-        fill: var(--logo-even) !important;
-    }
+  &1,
+  &3 {
+    fill: var(--logo-odd);
+  }
+  &2,
+  &4 {
+    fill: var(--logo-even);
+  }
 }
 
 // ^^^ LOGO ^^^ //
-// vvv ICONS vvv //
-// 
-// ^^^ ICONS ^^^ //
 // vvv DARK MODE vvv //
 // Visually hide the label text and Inject Light/Dark Mode Icon (based on checkbox value) //
 :where(html) {
-    --ease-1:cubic-bezier(.25,0,.5,1);
-    --ease-2:cubic-bezier(.25,0,.4,1);
-    --ease-3:cubic-bezier(.25,0,.3,1);
-    --ease-4:cubic-bezier(.25,0,.2,1);
-    --ease-5:cubic-bezier(.25,0,.1,1);
-    --ease-in-1:cubic-bezier(.25,0,1,1);
-    --ease-in-2:cubic-bezier(.50,0,1,1);
-    --ease-in-3:cubic-bezier(.70,0,1,1);
-    --ease-in-4:cubic-bezier(.90,0,1,1);
-    --ease-in-5:cubic-bezier(1,0,1,1);
-    --ease-out-1:cubic-bezier(0,0,.75,1);
-    --ease-out-2:cubic-bezier(0,0,.50,1);
-    --ease-out-3:cubic-bezier(0,0,.3,1);
-    --ease-out-4:cubic-bezier(0,0,.1,1);
-    --ease-out-5:cubic-bezier(0,0,0,1);
-    --ease-in-out-1:cubic-bezier(.1,0,.9,1);
-    --ease-in-out-2:cubic-bezier(.3,0,.7,1);
-    --ease-in-out-3:cubic-bezier(.5,0,.5,1);
-    --ease-in-out-4:cubic-bezier(.7,0,.3,1);
-    --ease-in-out-5:cubic-bezier(.9,0,.1,1);
-    --ease-elastic-1:cubic-bezier(.5,.75,.75,1.25);
-    --ease-elastic-2:cubic-bezier(.5,1,.75,1.25);
-    --ease-elastic-3:cubic-bezier(.5,1.25,.75,1.25);
-    --ease-elastic-4:cubic-bezier(.5,1.5,.75,1.25);
-    --ease-elastic-5:cubic-bezier(.5,1.75,.75,1.25);
-    --ease-squish-1:cubic-bezier(.5,-.1,.1,1.5);
-    --ease-squish-2:cubic-bezier(.5,-.3,.1,1.5);
-    --ease-squish-3:cubic-bezier(.5,-.5,.1,1.5);
-    --ease-squish-4:cubic-bezier(.5,-.7,.1,1.5);
-    --ease-squish-5:cubic-bezier(.5,-.9,.1,1.5);
-    --ease-step-1:steps(2);
-    --ease-step-2:steps(3);
-    --ease-step-3:steps(4);
-    --ease-step-4:steps(7);
-    --ease-step-5:steps(10)
-   }
-.sun-and-moon>:is(.moon,.sun,.sun-beams) {
-transform-origin:center center
+  --ease-1: cubic-bezier(0.25, 0, 0.5, 1);
+  --ease-2: cubic-bezier(0.25, 0, 0.4, 1);
+  --ease-3: cubic-bezier(0.25, 0, 0.3, 1);
+  --ease-4: cubic-bezier(0.25, 0, 0.2, 1);
+  --ease-5: cubic-bezier(0.25, 0, 0.1, 1);
+  --ease-in-1: cubic-bezier(0.25, 0, 1, 1);
+  --ease-in-2: cubic-bezier(0.5, 0, 1, 1);
+  --ease-in-3: cubic-bezier(0.7, 0, 1, 1);
+  --ease-in-4: cubic-bezier(0.9, 0, 1, 1);
+  --ease-in-5: cubic-bezier(1, 0, 1, 1);
+  --ease-out-1: cubic-bezier(0, 0, 0.75, 1);
+  --ease-out-2: cubic-bezier(0, 0, 0.5, 1);
+  --ease-out-3: cubic-bezier(0, 0, 0.3, 1);
+  --ease-out-4: cubic-bezier(0, 0, 0.1, 1);
+  --ease-out-5: cubic-bezier(0, 0, 0, 1);
+  --ease-in-out-1: cubic-bezier(0.1, 0, 0.9, 1);
+  --ease-in-out-2: cubic-bezier(0.3, 0, 0.7, 1);
+  --ease-in-out-3: cubic-bezier(0.5, 0, 0.5, 1);
+  --ease-in-out-4: cubic-bezier(0.7, 0, 0.3, 1);
+  --ease-in-out-5: cubic-bezier(0.9, 0, 0.1, 1);
+  --ease-elastic-1: cubic-bezier(0.5, 0.75, 0.75, 1.25);
+  --ease-elastic-2: cubic-bezier(0.5, 1, 0.75, 1.25);
+  --ease-elastic-3: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+  --ease-elastic-4: cubic-bezier(0.5, 1.5, 0.75, 1.25);
+  --ease-elastic-5: cubic-bezier(0.5, 1.75, 0.75, 1.25);
+  --ease-squish-1: cubic-bezier(0.5, -0.1, 0.1, 1.5);
+  --ease-squish-2: cubic-bezier(0.5, -0.3, 0.1, 1.5);
+  --ease-squish-3: cubic-bezier(0.5, -0.5, 0.1, 1.5);
+  --ease-squish-4: cubic-bezier(0.5, -0.7, 0.1, 1.5);
+  --ease-squish-5: cubic-bezier(0.5, -0.9, 0.1, 1.5);
+  --ease-step-1: steps(2);
+  --ease-step-2: steps(3);
+  --ease-step-3: steps(4);
+  --ease-step-4: steps(7);
+  --ease-step-5: steps(10);
 }
-.sun-and-moon>:is(.moon,
-.sun) {
-fill:var(--icon-fill)
+
+#theme-toggle {
+  --size: 2rem;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  inline-size: var(--size);
+  block-size: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline-offset: 5px;
+  color: var(--font-color);
+  stroke: var(--font-color);
+  stroke-width: 2px;
+  fill: none;
 }
-.theme-toggle:is(:hover,
-:focus-visible)>.sun-and-moon>:is(.moon,
-.sun) {
-fill:var(--icon-fill-hover)
+.theme-toggle::before {
+  font-family: 'icomoon';
+  content: "\e907";
+  font-size: 1.8rem;
 }
-.sun-and-moon>.sun-beams {
-stroke:var(--icon-fill);
-stroke-width:2px
+[data-theme="dark"] .theme-toggle::before {
+  content: "\e906";
 }
-.theme-toggle:is(:hover,
-:focus-visible) .sun-and-moon>.sun-beams {
-stroke:var(--icon-fill-hover)
+.theme-button > svg {
+  inline-size: 100%;
+  block-size: 100%;
+  stroke-linecap: round;
 }
-[data-theme=dark] .sun-and-moon>.sun {
-transform:scale(1.75)
-}
-[data-theme=dark] .sun-and-moon>.sun-beams {
-opacity:0
-}
-[data-theme=dark] .sun-and-moon>.moon>circle {
-transform:translate(-7px)
-}
-@supports (cx: 1) {
-[data-theme=dark] .sun-and-moon>.moon>circle {
-    transform:translate(0);
-}
-}
-@media (prefers-reduced-motion: no-preference) {
-.sun-and-moon>.sun {
-    transition:transform .5s var(--ease-elastic-3)
-}
-.sun-and-moon>.sun-beams {
-    transition:transform .5s var(--ease-elastic-4),opacity .5s var(--ease-3)
-}
-.sun-and-moon .moon>circle {
-    transition:transform .25s var(--ease-out-5)
-}
-@supports (cx: 1) {
-    .sun-and-moon .moon>circle {
-    transition:cx .25s var(--ease-out-5)
-    }
-}
-[data-theme=dark] .sun-and-moon>.sun {
-    transform:scale(1.75);
-    transition-timing-function:var(--ease-3);
-    transition-duration:.25s
-}
-[data-theme=dark] .sun-and-moon>.sun-beams {
-    transform:rotate(-25deg);
-    transition-duration:.15s
-}
-[data-theme=dark] .sun-and-moon>.moon>circle {
-    transition-delay:.25s;
-    transition-duration:.5s
-}
-}
-.theme-toggle {
-    --size: 2rem;
-    --icon-fill: var(--font-color);
-    --icon-fill-hover: var(--font-color);
-    background:none;
-    border:none;
-    padding:0;
-    // margin: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    inline-size:var(--size);
-    block-size:var(--size);
-    aspect-ratio:1;
-    border-radius:50%;
-    cursor:pointer;
-    touch-action:manipulation;
-    -webkit-tap-highlight-color:transparent;
-    outline-offset:5px
-   }
-   .theme-toggle>svg {
-    inline-size:100%;
-    block-size:100%;
-    stroke-linecap:round
-   }
-/*    [data-theme=dark] .theme-toggle {
-    --icon-fill: hsl(210 10% 70%);
-    --icon-fill-hover: hsl(210 15% 90%) 
-   } */
-   @media (hover: none) {
-    .theme-toggle {
-     --size: 48px 
-    }
-   }
 
 // ^^^ DARK MODE ^^^ //
 // vvv GLOBAL STYLES vvv //
@@ -292,16 +602,17 @@ transform:translate(-7px)
 
 .home-header {
   margin-top: 10px;
-  min-height: 8.0rem;
-  max-height: 10.0rem;
+  min-height: 8rem;
+  max-height: 10rem;
 }
 
 .last-header {
   margin-right: 24px;
 }
 
-.header-button {
-    margin-left: 0 !important;
+.home-header .header-button {
+  margin-left: 0;
+  border: 1px solid var(--outline1);
 }
 
 .homeSplash {
@@ -328,26 +639,26 @@ transform:translate(-7px)
   margin-bottom: 0;
 }
 footer {
-    text-align: center;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 5.0rem;
-    margin-top: 1.0rem;
-    margin-bottom: 1.0rem;
+  text-align: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 // vvv MEDIA QUERIES vvv //
 @media (max-width: 991px) {
-  .headerEmail {
-    display: none !important;
+  .home-header .headerEmail {
+    display: none;
   }
   a .logo1 {
     max-width: 250px;
   }
 }
 @media (max-width: 767px) {
-  .headerPhone {
+  .home-header .headerPhone {
     display: none !important;
   }
   .logo1 {
