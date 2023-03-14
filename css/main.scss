@@ -64,7 +64,7 @@
   --orange-200: hsl(32, 98%, 83%);
   --orange-300: hsl(31, 97%, 72%);
   --orange-400: hsl(27, 96%, 61%);
-  --orange-500: hsl(25, 95%, 53%);
+  --orange-500: rgb(249, 116, 21);
   --orange-600: hsl(21, 90%, 48%);
   --orange-700: hsl(17, 88%, 40%);
   --orange-800: hsl(15, 79%, 34%);
@@ -172,8 +172,8 @@
   --violet-50: hsl(250, 100%, 98%);
   --violet-100: hsl(251, 91%, 95%);
   --violet-200: hsl(251, 95%, 92%);
-  --violet-300: hsl(252, 95%, 85%);
-  --violet-400: hsl(255, 92%, 76%);
+  --violet-300: rgb(195, 180, 253);
+  --violet-400: rgb(166, 137, 250);
   --violet-500: hsl(258, 90%, 66%);
   --violet-600: hsl(262, 83%, 58%);
   --violet-700: hsl(263, 70%, 50%);
@@ -251,6 +251,7 @@
     --shadow-color: 220deg 5% 56%;
     --font-color: var(--gray9);
     --font-invert: var(--gray1);
+    --font-accent: var(--amber-800);
     --logo-title: var(--gray9);
     --logo-odd: var(--gray9);
     --logo-even: var(--gray7);
@@ -258,15 +259,28 @@
     --outline0: var(--gray5);
     --outline1: var(--gray5);
     --outline2: var(--gray7);
-    --color-primary: var(--blue-700);
+    --color-primary: var(--blue-400);
+    --dt-row-selected: 249, 169, 213;
+    --dt-row-1: rgb(var(--dt-row-selected));
+    --dt-row-2: rgba(var(--dt-row-selected), 0.4);
+    --table-hov: var(--purple-300);
+    --table-hov2: var(--purple-900);
+    --table-green: var(--green-300);
+    --table-red: var(--red-300);
+    --table-red2: var(--red-500);
+    --table-yel: var(--yellow-300);
+    --table-header: var(--gray-7);
+    --search-bg: var(--gray-3);
+    --focus: var(--blue-700);
+    --table-highlight: var(--amber-400);
   }
   &[data-theme="dark"] {
     --bg-color: var(--gray9);
     --bg-secondary-color: var(--gray8);
     --shadow-color: 221deg 63% 2%;
-    // --shadow-color: 220deg 5% 26%;
     --font-color: var(--gray1);
     --font-invert: var(--gray9);
+    --font-accent: var(--teal-300);
     --logo-title: var(--gray1);
     --logo-odd: var(--gray1);
     --logo-even: var(--gray3);
@@ -274,25 +288,26 @@
     --outline0: var(--gray4);
     --outline1: var(--gray7);
     --outline2: var(--gray6);
-    --color-primary: var(--blue-600);
+    --color-primary: var(--blue-900);
+    --dt-row-selected: 191, 24, 93;
+    --dt-row-1: rgb(var(--dt-row-selected));
+    --dt-row-2: rgba(var(--dt-row-selected), 0.3);
+    --table-hov: var(--purple-600);
+    --table-hov2: var(--purple-200);
+    --table-green: var(--green-700);
+    --table-red: var(--red-700);
+    --table-red2: var(--red-700);
+    --table-yel: var(--amber-600);
+    --table-header: var(--gray-3);
+    --search-bg: var(--gray-3);
+    --focus: var(--blue-500);
+    --table-highlight: var(--teal-900);
   }
 
   --shadow1: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.48),
     0.8px 1.5px 1.8px -1px hsl(var(--shadow-color) / 0.44),
     2.1px 4.1px 4.8px -2px hsl(var(--shadow-color) / 0.4),
     5.3px 10.5px 12.3px -3px hsl(var(--shadow-color) / 0.36);
-}
-
-@font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?14eq91');
-  src:  url('fonts/icomoon.eot?14eq91#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?14eq91') format('truetype'),
-    url('fonts/icomoon.woff?14eq91') format('woff'),
-    url('fonts/icomoon.svg?14eq91#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
 }
 
 @font-face {
@@ -371,8 +386,20 @@ src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1
 unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-[class^="icon-"], [class*=" icon-"], .icon1 {
-  // /* use !important to prevent issues with browser extensions that change fonts */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?o5aki1');
+  src:  url('fonts/icomoon.eot?o5aki1#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?o5aki1') format('truetype'),
+    url('fonts/icomoon.woff?o5aki1') format('woff'),
+    url('fonts/icomoon.svg?o5aki1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
@@ -381,7 +408,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
   text-transform: none;
   line-height: 1;
 
-  // /* Better Font Rendering =========== */
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -392,6 +419,18 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 .icon-alert-triangle:before {
   content: "\e90c";
 }
+.icon-arrow-left:before {
+  content: "\e914";
+}
+.icon-arrow-left-circle:before {
+  content: "\e915";
+}
+.icon-book-open:before {
+  content: "\e91b";
+}
+.icon-calendar:before {
+  content: "\e90d";
+}
 .icon-check:before {
   content: "\e900";
 }
@@ -401,11 +440,53 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 .icon-check-square:before {
   content: "\e902";
 }
+.icon-credit-card:before {
+  content: "\e91a";
+}
+.icon-edit:before {
+  content: "\e91c";
+}
+.icon-home:before {
+  content: "\e921";
+}
+.icon-info:before {
+  content: "\e90e";
+}
 .icon-lock:before {
   content: "\e903";
 }
+.icon-log-in:before {
+  content: "\e90f";
+}
+.icon-log-out:before {
+  content: "\e910";
+}
+.icon-map-pin:before {
+  content: "\e91d";
+}
+.icon-minus-square:before {
+  content: "\e91e";
+}
 .icon-moon:before {
   content: "\e904";
+}
+.icon-paperclip:before {
+  content: "\e911";
+}
+.icon-plus-square:before {
+  content: "\e91f";
+}
+.icon-printer:before {
+  content: "\e912";
+}
+.icon-rotate-ccw:before {
+  content: "\e916";
+}
+.icon-skip-back:before {
+  content: "\e917";
+}
+.icon-square:before {
+  content: "\e920";
 }
 .icon-sun:before {
   content: "\e905";
@@ -415,6 +496,15 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 }
 .icon-sunset:before {
   content: "\e907";
+}
+.icon-tag:before {
+  content: "\e913";
+}
+.icon-thumbs-down:before {
+  content: "\e918";
+}
+.icon-thumbs-up:before {
+  content: "\e919";
 }
 .icon-user:before {
   content: "\e908";
@@ -426,14 +516,12 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
   content: "\e90a";
 }
 
-
-
 body {
   height: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background 1s;
+  transition: none;
 }
 
 *,
@@ -610,9 +698,16 @@ input {
   margin-right: 24px;
 }
 
+.last-header form {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-block-end: auto;
+}
+
 .home-header .header-button {
   margin-left: 0;
   border: 1px solid var(--outline0);
+  color: var(--font-color);
 }
 
 .homeSplash {

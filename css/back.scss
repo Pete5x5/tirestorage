@@ -1,14 +1,41 @@
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.bar {
+  width: 100vw;
+  border: 1px solid var(--outline0);
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  line-height: 1.6rem;
+  background: var(--color-primary);
+  @extend .unselectable;
+  &.success {
+    background: var(--table-green);
+  }
+  &.error {
+    background: var(--table-red2);
+  }
+  & [class*=icon-] {
+    padding-right: 0.8rem;
+  }
+}
+
 .login {
     margin-top: 10vh;
     border: 2px solid var(--outline0);
     background-color: var(--bg-secondary-color);
-    // background-color: var(--bg-color);
-    // background-color: var(--blue-100);
     padding: 20px;
     padding-bottom: 0;
     width: 90vw;
     max-width: 50rem;
-    // box-shadow: var(--shadow1);
     & button {
         margin-top: 2rem;
         margin-left: -20px;
@@ -18,19 +45,228 @@
         padding: 30px;
         border-top: 2px solid var(--outline0);
         font-size: 2rem;
-        font-weight: bold;
+        font-weight: 500;
+        color: var(--font-color);
     }
     & ,button {
         align-self: center;
     }
     & h1 {
-        font-size: 4rem;
+        font-size: 4.0rem;
         text-align: center;
-        padding-bottom: 1.2rem;
     }
+    &:not(.req1){
+      margin-bottom: 32px;
+    }
+} 
+
+.req1 {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 0;
+  &:not(.printButtRow) {
+   margin-bottom: 16px;
+  }
+  & h1 {
+    font-size: 2.4rem;
+    @extend .unselectable;
+  }
+  & label {
+    @extend .unselectable;
+  }
+  & input, button, textarea {
+    margin-bottom: 16px;
+    color: var(--gray9);
+    border: var(--outline0) solid 1px;
+  }
+  & textarea {
+    height: fit-content;
+    resize: none;
+  }
 }
 
-.loginTitle {
+#upDiff {
+  background: var(--bg-secondary-color);
+  box-shadow: none;
+  font-family: 'Roboto Mono', monospace;
+  width: 90vw;
+  max-width: 800px;
+  margin-top: 0;
+  margin-bottom: 32px;
+  & h1, h2 {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: var(--font-color);
+  }
+  & h1, h2, th, p, a {
+    font-family: 'Inter', sans-serif;
+  }
+  & h1 {
+    font-size: 2.4rem;
+  }
+  & h2 {
+    font-size: 2rem;
+  }
+  & .textouter {
+    background: var(--gray1);
+    border: var(--outline0) solid 1px;
+    color: var(--gray9);
+  }
+  & .checkbox-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    @extend .unselectable;
+    & input {
+      margin-bottom: 0;
+      margin-right: 4px;
+    }
+  }
+  & .diffButt {
+    margin-bottom: 12px;
+    margin-top: 8px;
+    & a, input {
+    border-radius: 0;
+    border: var(--outline0) solid 1px;
+    font-size: 1.6rem;
+    margin: auto;
+    padding: 15px;
+    font-weight: 400;
+    text-align: center;
+    }
+    & a {
+      margin-right: 20px;
+      margin-left: 20px;
+      line-height: 1.6rem;
+      background: var(--table-red2);
+      color: var(--font-color);
+      @extend .unselectable;
+      & i::before {
+        padding-right: 0.8rem;
+      }
+    }
+    & input {
+      margin-right: 20px;
+    }
+  }
+}
+
+.printButtRow {
+  position: sticky;
+  top: 0px;
+  background: var(--bg-color);
+  padding-bottom: 8px;
+  padding-top: 8px;
+  z-index: 3;
+  & .printBack {
+    background-color: var(--table-red2);
+  }
+  & .printTag, .printOrder {
+    background-color: var(--dt-row-1);
+    margin-left: 12px;
+  }
+  & button {
+    margin: auto;
+    color: var(--font-color);
+  }
+  & button:first-child {
+    margin-left: 0;
+  }
+  & button:last-child {
+    margin-right: 0;
+  }
+  @extend .unselectable;
+  &.alone1 {
+    display: flex;
+    width: 90vw;
+    max-width: 800px;
+    line-height: 1.6rem;
+    background: var(--bg-color);
+    border-radius: 0;
+    font-size: 1.6rem;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 12px;
+    justify-items: flex-start;
+    align-items: flex-start;
+  }
+  & .alone2 {
+    color: var(--font-color);
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    align-self: left;
+    background: var(--table-red2);
+    border: var(--outline0) solid 1px;
+    padding: 10px;
+    flex-grow: 0.33;
+    & i::before {
+      padding-right: 0.8rem;
+    }
+  }
+}
+
+#req {
+  & input {
+    border-radius: 0;
+  }
+  & input:not(#request, #submit), textarea, .autofill {
+    font-family: 'Roboto Mono', monospace;
+  }
+  & .autofilled:not(:placeholder-shown) {
+    color: var(--font-color);
+  }
+  & .head {
+    color: var(--font-accent);
+  }
+  & .highlight {
+    background: var(--table-highlight);
+  }
+  & h1 {
+    padding-bottom: 0;
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  & textarea {
+      border-radius: 0;
+  }
+}
+
+input#session-date {
+  display: inline-block;
+  position: relative;
+}
+
+input[type="date"] {
+  &::-webkit-calendar-picker-indicator, ::-moz-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+  }
+}
+
+#request {
+  background-color: var(--table-yel);
+  color: var(--font-color);
+  width: 100%;
+}
+
+#submit {
+  background-color: var(--table-green);
+  color: var(--font-color);
+  width: 100%;
+}
+
+.loginTitle, .expandTitle, .submitTitle {
     margin-bottom: 3rem;
     margin-top: -10px;
     color: var(--text-color);
@@ -40,8 +276,8 @@
     border-style: solid;
 }
 
-.login [class*="icon-"] {
-    color: var(--gray1);
+.login:not(.req1) [class*="icon-"] {
+    color: var(--font-color);
     font-size: 2.4rem;
     padding: 1.8rem;
     line-height: 4rem;
@@ -71,4 +307,515 @@
   font-size: 1.8rem;
   padding: 2.0rem;
   color: var(--gray1);
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v22/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_gPq_ROW-AJi8SJQt.woff) format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+tableId tbody > tr > td {
+  white-space: nowrap;
+}
+
+#vc #vp tr {
+  height: fit-content !important;
+}
+
+#vp table.dataTable tbody tr.selected > *, table.dataTable.display > tbody > tr.selected > * {
+  box-shadow: inset 0 0 0 9999px var(--dt-row-1) !important;
+}
+
+tbody {
+  font-family: "Roboto Mono", monospace;
+}
+
+table td {
+  white-space: nowrap;
+  word-break: break-all;
+  border-spacing: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+}
+
+.open {
+  background-color: var(--table-green);
+}
+
+.closed {
+  background-color: var(--table-red);
+}
+
+.requested {
+  background-color: var(--table-yel);
+}
+
+#vc tbody tr:hover:not(.selected):not(.child) {
+  background-color: var(--table-hov);
+  height: 6.4rem;
+}
+
+#vc .dtsp-name {
+  color: var(--font-color);
+}
+
+div.dtsp-verticalContainer {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+div.dtsp-verticalContainer div.dtsp-verticalPanes,
+div.dtsp-verticalContainer div.container {
+  width: 50px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 0;
+}
+
+div.dtsp-verticalContainer div.dtsp-verticalPanes {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 5%;
+}
+
+div.dtsp-verticalPanes, *::placeholder, .sorting {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3px;
+  align-self: flex-start;
+  @extend .unselectable;
+}
+
+div.dtsp-title {
+  margin: 6px;
+}
+
+#vc div.dtsp-searchPane {
+  margin-top: 0 !important;
+}
+
+#vc .dtsp-searchPanes .dtsp-searchPane {
+  padding-top: 8px;
+  & .dataTables_wrapper {
+    border: var(--outline0) solid 1px;
+    border-radius: 0;
+  }
+}
+
+#vc .dtsp-searchPanes .dtsp-searchPane:first-child {
+  padding-top: 0;
+}
+
+#vc .dtsp-topRow {
+  display: none;
+}
+
+div.dtsp-verticalContainer div.container {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 80%;
+}
+
+div.dtsp-panesContainer {
+  padding: 5px;
+  margin-bottom: 0 !important;
+  background: var(--bg-color);
+}
+
+tr {
+  height: 4.8rem;
+}
+
+td {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#vc th {
+  background-color: var(--font-color);
+  color: var(--font-invert);
+  height: 4.8rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  &:hover {
+    background-color: var(--table-hov2);
+  }
+  &:not(:last-child){
+    border-right: var(--font-invert) solid 1px;
+  }
+}
+
+#vc th:before, #vc th:after {
+  opacity: 0.6;
+  padding: 1px;
+}
+
+table.dataTable thead>tr>th.sorting_asc:before,
+table.dataTable thead>tr>th.sorting_desc:after,
+table.dataTable thead>tr>td.sorting_asc:before,
+table.dataTable thead>tr>td.sorting_desc:after {
+  opacity:1 !important;
+  color: red;
+}
+
+.tire {
+  width: 94%;
+  background-color: var(--bg-color);
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.dt-above {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: var(--bg-color);
+  height: 9.4rem;
+  padding-top: 8px;
+  padding-bottom: 88px;
+}
+
+.dtfh-floatingparent {
+  position: sticky;
+  top: 92px !important;
+  border: var(--outline0) solid 1px;
+}
+
+#table_id_wrapper .dataTables_scrollHead {
+  top: 92px;
+  position: sticky !important;
+  border: var(--outline0) solid 1px;
+  z-index: 2;
+}
+
+.open {
+  z-index: 0;
+}
+
+.tire, .dtsp-verticalContainer, .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.dtsp-verticalPanes {
+  min-width: 14rem;
+  flex-grow: 0;
+  flex-basis: 20%;
+}
+
+.container {
+  flex-grow: 1;
+  max-width: 100%;
+  padding: 0;
+  padding-left: 8px;
+}
+
+#table_id_wrapper {
+  & .buttons-selected-single {
+    background: var(--dt-row-1);
+  }
+  & .reqButton {
+    background: var(--table-yel);
+  }
+}
+
+#table_id .selected td {
+  color: var(--font-color);
+  height: 6.4rem;
+  border-top: var(--grey3) solid 1px;
+}
+
+#vc div .dtsp-searchPane .dataTables_scrollBody {
+  height: auto !important;
+}
+
+#vp {
+  height: auto;
+  max-height: 13.2rem;
+  z-index: 2;
+  margin-top: 3px;
+  background: var(--bg-color);
+  & .dtsp-nameColumn{
+    padding: 0;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  & .dtsp-nameCont {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  & .dtsp-nameCont::before {
+    margin-right: 4px;
+    font-family: 'Icomoon';
+    content: "\e920";
+    color: var(--font-color);
+  }
+  & .selected .dtsp-nameCont::before {
+    content: "\e902";
+  }
+  & .dtsp-nameCont:hover::before {
+    content: "\e91f";
+  }
+  & .selected .dtsp-nameCont:hover::before {
+    content: "\e91e";
+  }
+}
+
+#DataTables_Table_0 {
+  background: var(--bg-color);
+}
+
+#DataTables_Table_0_wrapper {
+  border: var(--outline0) solid 1px;
+  border-radius: 0;
+}
+
+.dtsp-titleRow {
+  display: none;
+}
+
+#table_id_filter {
+  margin-top: 0;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  min-width: 30rem;
+  width: 100%;
+  background: var(--bg-color);
+}
+
+#table_id_filter label input {
+  margin: 0;
+  border-radius: 0;
+  background: var(--bg-color);
+}
+
+:root[data-theme=dark] #table_id_filter label input {
+  background: var(--gray2);
+}
+
+#table_id_filter label input::placeholder {
+  color: var(--gray9);
+}
+
+.rightButton, .menuButton {
+  float: right;
+}
+
+.addButton {
+  float: left;
+}
+
+#vc .tableButton {
+  border-radius: 0;
+}
+
+.dt-buttons {
+  width: 100%;
+}
+
+#vc button.dt-button {
+  color: var(--font-color);
+  border: var(--outline0) solid 1px;
+  &:focus {
+    border: var(--focus) solid 1px;
+    text-shadow: none;
+  }
+  &:first-child {
+    margin-left: .167em;
+    margin-right: 0;
+  }
+  &:last-child {
+    margin-left: 0;
+    margin-right: .167em;
+  }
+}
+
+#vc .addButton {
+  background: var(--table-green);
+
+&:focus {
+  background: var(--table-green);
+}
+}
+
+#vc .menuButton {
+  display: none;
+}
+
+#vc .odd {
+  background: var(--bg-secondary-color);
+}
+
+#vc .even {
+  background: var(--bg-color);
+}
+
+#vc .child {
+  background: var(--dt-row-2);
+  padding-top: none;
+  &:hover {
+    background: var(--dt-row-2) !important;
+    box-shadow: none;
+  }
+}
+
+#vc .child ul {
+  margin-left: 32px !important;
+  padding-bottom: 14px;
+}
+
+#vc .child ul::before {
+  content: "";
+  background: var(--bg-color);
+  background-image: url("/img/corner-down-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 28px;
+  width: 2rem;
+  display: inline-block;
+  padding-top: calc(1000% + 16px);
+  padding-bottom: 0;
+  margin-left: -42px;
+  margin-top: -8px;
+  margin-bottom: -1000%;
+  padding-left: 16px;
+  height: 10px;
+  border-right: var(--dt-row-1) solid 2px;
+}
+
+:root[data-theme=dark] #vc .child ul::before {
+  background-image: url("/img/corner-down-right-D.svg");
+}
+
+#vc .dtr-details li {
+  border-bottom-color: var(--font-color);
+  line-height: 2rem;
+}
+
+#vc .highlight {
+  background-color: var(--table-highlight);
+}
+
+.dtr-data {
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+#vc .paginate_button, #vc .paginate_button.current {
+  background: var(--bg-secondary-color);
+  border: var(--outline0) solid 1px;
+  &:hover:not(.disabled) {
+    color: var(--font-color) !important;
+    background: var(--table-hov);
+  }
+}
+
+#vc .paginate_button.current {
+  background: var(--table-hov);
+}
+
+#table_id_paginate {
+  @extend .unselectable;
+}
+
+.home-link {
+  padding-right: 16px;
+}
+
+.result {
+  overflow-y: auto;
+  overflow-wrap: break-word;
+}
+.result ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.result ul li {
+  padding: 5px 0;
+  background: var(--bg-color);
+}
+.result ul li:nth-child(odd) {
+  background: var(--bg-secondary-color);
+}
+.result ul li:hover {
+  background: var(--table-hov);
+  color: var(--font-color) !important;
+}
+.autofill {
+  height: 18.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+}
+.autofilled:not(:placeholder-shown) {
+    background: var(--dt-row-1);
+}
+
+@media (max-width: 480px) {
+  .printButtRow {
+    margin-top: 12px;
+    max-width: 90vw;
+  }
+}
+@media (max-width: 598px) {
+  #upDiff .diffButt input {
+    margin-left: 20px;
+    margin-top: 12px;
+  }
+}
+@media (max-width: 765px) {
+  #vc .dtsp-searchPanes .dtsp-searchPane {
+    &:first-child {
+      display: none;
+    }
+    &:last-child {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .dt-above {
+    top: 142px;
+    padding-bottom: 82px;
+  }
+  #table_id_wrapper .dataTables_scroll .dataTables_scrollHead {
+    position: sticky !important;
+    top: 233px;
+    z-index: 2;
+  }
+  #vp {
+    margin-top: 0;
+  }
+  .container {
+    padding-left: 0;
+  }
+  div.dtsp-verticalPanes {
+    top: 0;
+    margin: 0;
+    padding-bottom: 144px;
+  }
+  div.dtsp-panesContainer {
+    padding-top: 8px;
+  }
+  .printButtRow .printTag, .printButtRow .printOrder {
+    margin-left: auto;
+  }
+}
+@media (max-width: 876px) {
+  #vc .rightButton {
+    display: none;
+  }
+  #vc .menuButton {
+    display: inherit;
+  }
 }
